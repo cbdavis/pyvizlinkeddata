@@ -1,5 +1,13 @@
 # pyvizlinkeddata
 
+## What?
+This code runs a series of SPARQL queries on linked data and maps out the data structures that are found.
+
+It runs the following steps:
+* Find all distinct URLs for `rdf:type`
+* For each type, find all data type and object properties along with their use count
+* Find links between instances of each type. 
+
 Use:
 ```
 prefixes = """
