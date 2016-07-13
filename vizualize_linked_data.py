@@ -36,10 +36,11 @@ def getAllDataTypeProperties(g, prefixes, subjectType):
 
     df = pd.DataFrame()
     for row in query_result:
-        df = df.append({"subject": subjectType, 
-                        "predicate" : str(row[0]), 
-                        "object": str(row[2]), 
-                        "count": int(row[1])}, ignore_index=True)        
+        if str(row[1]) != 'None':
+            df = df.append({"subject": subjectType, 
+                            "predicate" : str(row[0]), 
+                            "object": str(row[2]), 
+                            "count": int(row[1])}, ignore_index=True)        
 
     return df
 
